@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { View, Text } from 'react-native'
 
-export default function StackScreen() {
+const StackScreen =() => {
   return (
     <View>
       <Text
@@ -9,7 +9,9 @@ export default function StackScreen() {
         fontSize: 30,
         textAlign: "center",
         marginTop: "20%"
-      }}>StackScreen</Text>
+      }}>Stack Screen</Text>
     </View>
   )
 }
+
+export default StackScreen
