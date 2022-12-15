@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import AccordionList from "../src/components/AccordionList"
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -15,6 +16,8 @@ const HomeScreen = () => {
       >
         Home Screen
       </Text>
+      <AccordionList/>
+      
       <TouchableOpacity
         onPress={() => navigation.navigate("Stack")}
         style={{

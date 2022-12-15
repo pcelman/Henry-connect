@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  FlatList,
+} from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -22,16 +29,16 @@ const Tab = createBottomTabNavigator();
 
 const data = [
   {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'First Item',
+    id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+    title: "First Item",
   },
   {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
+    id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+    title: "Second Item",
   },
   {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
+    id: "58694a0f-3da1-471f-bd96-145571e29d72",
+    title: "Third Item",
   },
 ];
 
@@ -65,29 +72,13 @@ function MyStack() {
 export default function Navigation() {
   return (
     <NavigationContainer>
-<SafeAreaView>
-  <view style={styles.container}>
-    <FlatList
-    data={data}
-    keyExtractor={(item)=>item.id.toString()}
-    renderItem={({item})=> (
-      <AccordionItem title={item.title} bodyText={item.body}/>
-    )}/>
-  </view>
-</SafeAreaView>
-
-
-
-
-
-
       <Tab.Navigator
         // initialRouteName="Home"
         screenOptions={{
           // headerShown: false,
           tabBarActiveTintColor: "purple",
           tabBarShowLabel: false,
-          tabBarStyle: { backgroundColor: "#ad40af"},
+          tabBarStyle: { backgroundColor: "#ad40af" },
           tabBarInactiveTintColor: "#fff",
           tabBarActiveTintColor: "yellow",
           style: {
@@ -99,7 +90,7 @@ export default function Navigation() {
             backgroundColor: "#ffffff",
             borderRadius: 15,
             height: 90,
-            ...styles.shadow,
+            // ...styles.shadow,
           },
         }}
       >
@@ -145,15 +136,62 @@ export default function Navigation() {
   );
 }
 
-const styles = StyleSheet.create({
-  shadow: {
-    shadowColor: "#7f5df0",
-    shadowOffset: {
-      width: 0,
-      height: 10,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.5,
-    elevation: 5,
-  },
-});
+// import React from "react";
+// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+// import { NavigationContainer } from "@react-navigation/native";
+// import { Ionicons } from '@expo/vector-icons';
+// import { Feather } from '@expo/vector-icons';
+
+// //screens
+// import HomeScreen from "./screens/HomeScreen";
+// import LocationScreen from "./screens/LocationScreen";
+// import StackScreen from "./screens/StackScreen";
+// import UserScreen from "./screens/UserScreen";
+
+
+// const Tab = createBottomTabNavigator();
+
+// function MyTabs(){
+//     return(
+//         <Tab.Navigator
+//         initialRouteName="Home"
+//         screenOptions={{
+//             tabBarStyle: {
+//                 backgroundColor:"#5947C2"
+//             },
+//             tabBarActiveBackgroundColor: "#5037B6",
+//             tabBarActiveTintColor: "white"
+//         }}
+//         >
+//             <Tab.Screen name="Home" component={HomeScreen}
+//              options={{
+//                 tabBarIcon: ({color, size}) =>(
+//                     <Ionicons name="home-outline" size={size} color={color} />
+//                 )
+//             }}
+//             />
+//             <Tab.Screen name="Location" component={LocationScreen}
+//             options={{
+//                 tabBarIcon: ({color, size}) =>(
+//                     <Ionicons name="ios-compass-outline" size={size} color={color} />
+//                 )
+//             }}
+//             />
+//             <Tab.Screen name="User" component={UserScreen}
+//             options={{
+//                 tabBarIcon: ({color, size}) =>(
+//                     <Feather name="user" size={size} color={color} />
+//                 )
+//             }}
+//             />
+//         </Tab.Navigator>
+//     )
+// }
+
+// export default function Navigation() {
+//     return(
+//         <NavigationContainer>
+//             <MyTabs/>
+//         </NavigationContainer>
+//     )
+// }
